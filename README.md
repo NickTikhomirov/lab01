@@ -20,6 +20,7 @@ $ alias edit=nano
 #Зачем-то назначаем nano для команды edit
 ```
 
+Учимся создавать директории, входить в них и выходить
 ```ShellSession
 $ mkdir -p ${GITHUB_USERNAME}/workspace
 # Создаем директорию с указанным выше адресом
@@ -40,6 +41,7 @@ $ mkdir -p workspace/reports/
 $ cd workspace
 ```
 
+Загрузка и распаковка NodeJS
 ```ShellSession
 # Debian
 $ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
@@ -52,6 +54,7 @@ $ mv node-v6.11.5-linux-x64 node
 # Перемещаем содержимое архива
 ```
 
+Обновление PATH
 ```ShellSession
 $ ls node/bin
 # Выводит содержимое node/bin
@@ -68,6 +71,7 @@ EOF
 $ source scripts/activate
 ```
 
+Установка gistup
 ```ShellSession
 $ npm install -g gistup
 # Установка пакета через менеджер пакетов
