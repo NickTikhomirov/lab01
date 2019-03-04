@@ -10,20 +10,29 @@
 
 ## Tutorial
 
+Export - это как define в c++ (для констант), alias - тоже, но для команд
 ```bash
-$ export GITHUB_USERNAME=<имя_пользователя>
-$ export GIST_TOKEN=<сохраненный_токен>
-$ alias edit=<nano|vi|vim|subl>
+$ export GITHUB_USERNAME=NickTikhomirov
+#Обозначаем слово выше за мое имя на гитхабе
+$ export GIST_TOKEN=ххххххххххххх
+#Обозначаем слово выше за мой токен
+$ alias edit=nano
+#Зачем-то назначаем nano для команды edit
 ```
 
 ```ShellSession
 $ mkdir -p ${GITHUB_USERNAME}/workspace
+# Создаем директорию с указанным выше адресом
 $ cd ${GITHUB_USERNAME}/workspace
+# Заходим в свежесозданную директорию
 $ pwd
+# Выводит текущую директорию
 $ cd ..
+# Выход на директорию выше
 $ pwd
 ```
 
+Создаем кучу директорий и заходим в директорию workspace
 ```ShellSession
 $ mkdir -p workspace/tasks/
 $ mkdir -p workspace/projects/
@@ -34,14 +43,20 @@ $ cd workspace
 ```ShellSession
 # Debian
 $ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+# Качаем NodeJS
 $ tar -xf node-v6.11.5-linux-x64.tar.xz
+# Разархивируем NodeJS
 $ rm -rf node-v6.11.5-linux-x64.tar.xz
+# Выкидываем архив
 $ mv node-v6.11.5-linux-x64 node
+# Перемещаем содержимое архива
 ```
 
 ```ShellSession
 $ ls node/bin
+# Выводит содержимое этой директории
 $ echo ${PATH}
+# Вывод на экран пути
 $ export PATH=${PATH}:`pwd`/node/bin
 $ echo ${PATH}
 $ mkdir scripts
@@ -54,6 +69,7 @@ $ source scripts/activate
 ```ShellSession
 $ npm install -g gistup
 $ ls node/bin
+# Выводит содержимое этой директории
 ```
 
 ```ShellSession
