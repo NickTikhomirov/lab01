@@ -12,32 +12,33 @@
 
 Export - это как define в c++ (для констант), alias - тоже, но для команд
 ```bash
+#Присваиваем переменной GITHUB_USERNAME мой логин на Github
 $ export GITHUB_USERNAME=NickTikhomirov
-#Обозначаем слово выше за мое имя на гитхабе
-$ export GIST_TOKEN=ххххххххххххх
-#Обозначаем слово выше за мой токен
+#Присваиваем переменной GITHUB_USERNAME мой токен
+$ export GIST_TOKEN=****************************************
+#Привязываем команду nano на команду edit
 $ alias edit=nano
-#Зачем-то назначаем nano для команды edit
 ```
 
-Учимся создавать директории, входить в них и выходить
+Создаём директорию workspace
 ```ShellSession
+# Создаем директорию с данным адресом
 $ mkdir -p ${GITHUB_USERNAME}/workspace
-# Создаем директорию с указанным выше адресом
-$ cd ${GITHUB_USERNAME}/workspace
 # Заходим в свежесозданную директорию
+$ cd ${GITHUB_USERNAME}/workspace
+# Вызываем команду, которая выводит текущую директорию
 $ pwd
-# Выводит текущую директорию
-$ cd ..
 # Выход на директорию выше
+$ cd ..
 $ pwd
 ```
 
-Создаем кучу директорий и заходим в директорию workspace
+Создание ещё множества директорий внутри workspace
 ```ShellSession
 $ mkdir -p workspace/tasks/
 $ mkdir -p workspace/projects/
 $ mkdir -p workspace/reports/
+#Переход в директорию workspace
 $ cd workspace
 ```
 
@@ -56,15 +57,15 @@ $ mv node-v6.11.5-linux-x64 node
 
 Обновление PATH
 ```ShellSession
-$ ls node/bin
 # Выводит содержимое node/bin
-$ echo ${PATH}
+$ ls node/bin
 # Вывод на экран переменной PATH
-$ export PATH=${PATH}:`pwd`/node/bin
-# Обозначение 
 $ echo ${PATH}
-$ mkdir scripts
+# Обозначение 
+$ export PATH=${PATH}:`pwd`/node/bin
+$ echo ${PATH}
 #Создание директории scripts
+$ mkdir scripts
 $ cat > scripts/activate<<EOF
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
@@ -73,10 +74,10 @@ $ source scripts/activate
 
 Установка gistup
 ```ShellSession
-$ npm install -g gistup
 # Установка пакета через менеджер пакетов
-$ ls node/bin
+$ npm install -g gistup
 # Выводит содержимое этой директории
+$ ls node/bin
 ```
 
 Пишем в файл gistup.json скобки и тест в них
