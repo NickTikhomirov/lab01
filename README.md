@@ -28,9 +28,11 @@ $ mkdir -p ${GITHUB_USERNAME}/workspace
 $ cd ${GITHUB_USERNAME}/workspace
 # Вызываем команду, которая выводит текущую директорию
 $ pwd
+/home/Никита/NickTikhomirov/workspace
 # Выход на директорию выше
 $ cd ..
 $ pwd
+/home/Никита/NickTikhomirov
 ```
 
 Создание ещё множества директорий внутри workspace
@@ -45,27 +47,33 @@ $ cd workspace
 Загрузка и распаковка NodeJS
 ```ShellSession
 # Debian
-$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
 # Качаем NodeJS
-$ tar -xf node-v6.11.5-linux-x64.tar.xz
+$ wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
 # Разархивируем NodeJS
-$ rm -rf node-v6.11.5-linux-x64.tar.xz
+$ tar -xf node-v6.11.5-linux-x64.tar.xz
 # Выкидываем архив
-$ mv node-v6.11.5-linux-x64 node
+$ rm -rf node-v6.11.5-linux-x64.tar.xz
 # Перемещаем содержимое архива
+$ mv node-v6.11.5-linux-x64 node
 ```
 
 Обновление PATH
 ```ShellSession
 # Выводит содержимое node/bin
 $ ls node/bin
+node  npm
 # Вывод на экран переменной PATH
 $ echo ${PATH}
+/home/Никита/bin:/usr/local/bin:/home/Никита/.local/bin:/usr/local/bin:/usr/bin:/cygdrive/c/Windows/system32:/cygdrive/c/Windows:/cygdrive/c/Windows/System32/Wbem:/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Windows/System32/OpenSSH:/cygdrive/c/Program Files/Intel/WiFi/bin:/cygdrive/c/Program Files/Common Files/Intel/WirelessCommon:/cygdrive/c/Users/Никита/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Users/Никита/.babun
+
 # Обозначение 
 $ export PATH=${PATH}:`pwd`/node/bin
 $ echo ${PATH}
+/home/Никита/bin:/usr/local/bin:/home/Никита/.local/bin:/usr/local/bin:/usr/bin:/cygdrive/c/Windows/system32:/cygdrive/c/Windows:/cygdrive/c/Windows/System32/Wbem:/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Windows/System32/OpenSSH:/cygdrive/c/Program Files/Intel/WiFi/bin:/cygdrive/c/Program Files/Common Files/Intel/WirelessCommon:/cygdrive/c/Users/Никита/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Users/Никита/.babun:/home/Никита/NickTikhomirov/workspace/node/bin
+
 #Создание директории scripts
 $ mkdir scripts
+# Пишем текст ниже в файл activate
 $ cat > scripts/activate<<EOF
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
@@ -76,8 +84,10 @@ $ source scripts/activate
 ```ShellSession
 # Установка пакета через менеджер пакетов
 $ npm install -g gistup
+/home/Никита/NickTikhomirov/workspace/node/bin/node: /home/Никита/NickTikhomirov/workspace/node/bin/node: cannot execute binary file
 # Выводит содержимое этой директории
 $ ls node/bin
+node  npm
 ```
 
 Пишем в файл gistup.json скобки и тест в них
